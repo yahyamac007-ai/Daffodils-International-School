@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Daffodils International School, Kudachi">
+<title>Daffodils International School | Kudachi</title>
+
+<style>
+:root {
+  --green: #287a3d;
+  --green-dark: #17552a;
+  --yellow: #ffdf55;
+  --cream: #fffdf3;
+  --ink: #203326;
+  --muted: #657568;
+  --white: #ffffff;
+  --line: #e6eddf;
+  --shadow: 0 12px 35px rgba(35,83,43,.10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: white;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button, .btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 21px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+  transition: .2s;
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+}
+
+.btn-yellow {
+  background: var(--yellow);
+  color: #24452b;
+}
+
+.btn-outline {
+  border: 2px solid var(--green);
+  color: var(--green);
+  background: transparent;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+/* TOP CONTACT BAR */
+
+.topbar {
+  background: var(--green-dark);
+  color: white;
+  font-size: .88rem;
+  padding: 8px 0;
+}
+
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* NAVIGATION */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255,255,255,.97);
+  box-shadow: 0 3px 18px rgba(0,0,0,.06);
+}
+
+.navwrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  color: var(--green-dark);
+  font-size: 1.12rem;
+  line-height: 1.15;
+}
+
+.brandmark {
+  width: 45px;
+  height: 45px;
+  border-radius: 15px;
+  background: var(--yellow);
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+}
+
+.brand small {
+  display: block;
+  font-size: .68rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  font-size: .91rem;
+  font-weight: 700;
+}
+
+.navlinks a:hover {
+  color: var(--green);
+}
+
+.menu-btn {
+  display: none;
+  background: var(--yellow);
+  color: var(--ink);
+  padding: 9px 14px;
+}
+
+/* HOME HERO */
+
+.hero {
+  background: linear-gradient(115deg,#fff9d9 0%,#f2f9df 58%,#e8f5e9 100%);
+  padding: 72px 0 66px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: #e4f2c3;
+  color: var(--green-dark);
+  padding: 7px 13px;
+  border-radius: 99px;
+  font-weight: 800;
+  font-size: .8rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem,5vw,4.6rem);
+  line-height: 1.04;
+  margin: 17px 0;
+  color: var(--green-dark);
+  letter-spacing: -.04em;
+}
+
+.hero h1 span {
+  color: #d69a00;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #536654;
+  max-width: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.hero-art {
+  min-height: 330px;
+  border-radius: 38px;
+  background: linear-gradient(145deg,#bde56b,#6fbd69);
+  display: grid;
+  place-items: center;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.school-emoji {
+  font-size: clamp(7rem,18vw,12rem);
+}
+
+.floating {
+  position: absolute;
+  background: white;
+  border-radius: 16px;
+  padding: 10px 14px;
+  font-weight: 800;
+  box-shadow: var(--shadow);
+}
+
+.float-one {
+  top: 28px;
+  left: 22px;
+}
+
+.float-two {
+  bottom: 25px;
+  right: 22px;
+}
+
+/* QUICK FACTS */
+
+.quickfacts {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 14px;
+  margin-top: -28px;
+  position: relative;
+}
+
+.fact {
+  background: white;
+  padding: 19px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.fact strong {
+  display: block;
+  color: var(--green);
+  font-size: 1.25rem;
+}
+
+.fact span {
+  font-size: .88rem;
+  color: var(--muted);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 70px 0;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 35px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.9rem,4vw,2.7rem);
+  line-height: 1.15;
+  color: var(--green-dark);
+  margin: 10px 0;
+}
+
+.section-head p {
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 8px 25px rgba(35,83,43,.05);
+}
+
+.card-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 17px;
+  background: #f1f8d9;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+}
+
+.card h3 {
+  color: var(--green-dark);
+  margin: 5px 0 8px;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.soft {
+  background: var(--cream);
+}
+
+/* ABOUT */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.feature-art {
+  min-height: 280px;
+  border-radius: 28px;
+  background: #e8f5d3;
+  display: grid;
+  place-items: center;
+  font-size: 8rem;
+}
+
+.checklist {
+  padding: 0;
+  list-style: none;
+}
+
+.checklist li {
+  margin: 12px 0;
+}
+
+.checklist li:before {
+  content: "✓";
+  color: var(--green);
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+/* STUDENT ZONE */
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.tab {
+  background: #edf5e6;
+  color: var(--green-dark);
+}
+
+.tab.active {
+  background: var(--green);
+  color: white;
+}
+
+.game-panel {
+  max-width: 780px;
+  margin: auto;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+
+.game-panel h3 {
+  color: var(--green-dark);
+}
+
+.game-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+
+.game-options button {
+  background: #f3f8e9;
+  color: var(--green-dark);
+  border: 1px solid #dce9cc;
+}
+
+.feedback {
+  font-weight: 700;
+  min-height: 28px;
+  color: var(--green);
+}
+
+/* FORMS */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field.full {
+  grid-column: 1/-1;
+}
+
+.field label {
+  font-weight: 700;
+  font-size: .92rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #d8e3d4;
+  border-radius: 12px;
+  background: white;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 3px solid #dff0b9;
+  border-color: var(--green);
+}
+
+.form-note {
+  font-size: .86rem;
+  color: var(--muted);
+}
+
+.notice {
+  padding: 13px 15px;
+  border-radius: 12px;
+  background: #f2f8e9;
+  color: var(--green-dark);
+  margin-top: 14px;
+  display: none;
+}
+
+/* EVENTS */
+
+.calendar-list {
+  display: grid;
+  gap: 12px;
+}
+
+.event-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.datebox {
+  min-width: 66px;
+  text-align: center;
+  background: #fff3bf;
+  border-radius: 13px;
+  padding: 8px;
+}
+
+.datebox strong {
+  display: block;
+  font-size: 1.3rem;
+  color: #735700;
+}
+
+/* GALLERY */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 13px;
+}
+
+.gallery-item {
+  min-height: 150px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 3.5rem;
+  background: linear-gradient(145deg,#f8eaa7,#d9efc2);
+}
+
+.gallery-item:nth-child(2n) {
+  background: linear-gradient(145deg,#d9edfa,#e7defb);
+}
+
+/* PARENT PORTAL */
+
+.portal-demo {
+  background: #f3f8ec;
+  border-radius: 24px;
+  padding: 25px;
+}
+
+.portal-stats {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.stat {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--green);
+}
+
+.stat small {
+  color: var(--muted);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.contact-card {
+  background: #f4f8ed;
+  border-radius: 20px;
+  padding: 22px;
+}
+
+/* FOOTER */
+
+.footer {
+  background: #174b29;
+  color: white;
+  padding: 42px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 25px;
+}
+
+.footer p,
+.footer a {
+  color: #d9eadb;
+}
+
+.footer a {
+  display: block;
+  margin: 7px 0;
+}
+
+.copyright {
+  border-top: 1px solid rgba(255,255,255,.2);
+  margin-top: 25px;
+  padding-top: 16px;
+  font-size: .85rem;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media(max-width:900px) {
+  .navlinks {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: white;
+    padding: 18px 4%;
+    box-shadow: var(--shadow);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navlinks.open {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .hero-grid,
+  .split,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px) {
+  .topbar .container {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 48px 0;
+  }
+
+  .quickfacts {
+    grid-template-columns: 1fr;
+    margin-top: 16px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  .portal-stats {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 52px 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP CONTACT BAR -->
+
+<div class="topbar">
+  <div class="container">
+    <span>📍 Hanjay Colony, Station Road, Kudachi</span>
+    <span>☎ 6364360590 | ✉ daffofilsinternationalschool@gmail.edu.in</span>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+
+<header class="header">
+<div class="container navwrap">
+
+  <a class="brand" href="#home">
+    <span class="brandmark">🌼</span>
+    <span>
+      DAFFODILS
+      <small>INTERNATIONAL SCHOOL · KUDACHI</small>
+    </span>
+  </a>
+
+  <button class="menu-btn" id="menuBtn">☰ Menu</button>
+
+  <nav class="navlinks" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#admissions">Admissions</a>
+    <a href="#student-zone">Student Zone</a>
+    <a href="#events">Events & Gallery</a>
+    <a href="#parent-portal">Parent Portal</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+</div>
+</header>
+
+<main>
+
+<!-- HOME PAGE -->
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+
+  <div>
+    <span class="eyebrow">🌱 A happy place to learn and grow</span>
+
+    <h1>
+      Big dreams begin with
+      <span>little steps.</span>
+    </h1>
+
+    <p>
+      Welcome to Daffodils International School, Kudachi.
+      We help every child learn with joy, build confidence
+      and discover their talents.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#admissions">Explore Admissions</a>
+      <a class="btn btn-yellow" href="#student-zone">Explore Student Zone</a>
+    </div>
+  </div>
+
+  <div class="hero-art">
+    <span class="floating float-one">Learn ✨ Play</span>
+    <div class="school-emoji">🏫</div>
+    <span class="floating float-two">Grow 🌼 Shine</span>
+  </div>
+
+</div>
+</section>
+
+<!-- QUICK FACTS -->
+
+<div class="container quickfacts">
+
+  <div class="fact">
+    <strong>3–16 Years</strong>
+    <span>Growing minds, every age</span>
+  </div>
+
+  <div class="fact">
+    <strong>Learn & Play</strong>
+    <span>Learning made joyful</span>
+  </div>
+
+  <div class="fact">
+    <strong>Kudachi</strong>
+    <span>Our school community</span>
+  </div>
+
+</div>
+
+<!-- ABOUT US -->
+
+<section id="about">
+<div class="container split">
+
+  <div>
+    <span class="eyebrow">A little about us</span>
+
+    <h2 style="color:var(--green-dark);font-size:2.5rem;line-height:1.15">
+      Every child has a special spark.
+    </h2>
+
+    <p>
+      At Daffodils International School, we believe children
+      learn best when they feel safe, happy and encouraged.
+      Our aim is to support learning, good values, creativity
+      and confidence.
+    </p>
+
+    <ul class="checklist">
+      <li>A caring and welcoming school environment</li>
+      <li>Learning through activities and discovery</li>
+      <li>Opportunities to explore talents and interests</li>
+      <li>A strong partnership with parents</li>
+    </ul>
+
+    <a class="btn btn-primary" href="#contact">Talk to Our School</a>
+  </div>
+
+  <div class="feature-art">📚🌈</div>
+
+</div>
+</section>
+
+<!-- ADMISSIONS -->
+
+<section class="soft" id="admissions">
+<div class="container">
+
+  <div class="section-head">
+    <span class="eyebrow">Join our school family</span>
+    <h2>Admissions Enquiry</h2>
+    <p>
+      Tell us a little about your child.
+      Our school team can contact you with the next steps.
+    </p>
+  </div>
+
+  <div class="game-panel">
+
+    <form id="admissionForm">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="childName">Child's full name *</label>
+          <input id="childName" required placeholder="Enter child's name">
+        </div>
+
+        <div class="field">
+          <label for="age">Child's age *</label>
+          <input id="age" type="number" min="3" max="16" required placeholder="Age in years">
+        </div>
+
+        <div class="field">
+          <label for="className">Class applying for *</label>
+
+          <select id="className" required>
+            <option value="">Select class</option>
+            <option>Nursery</option>
+            <option>LKG</option>
+            <option>UKG</option>
+            <option>Class 1</option>
+            <option>Class 2</option>
+            <option>Class 3</option>
+            <option>Class 4</option>
+            <option>Class 5</option>
+            <option>Class 6</option>
+            <option>Class 7</option>
+            <option>Class 8</option>
+            <option>Class 9</option>
+            <option>Class 10</option>
+            <option>Need guidance</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="parentName">Parent / guardian name *</label>
+          <input id="parentName" required placeholder="Enter parent name">
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone number *</label>
+          <input id="phone" type="tel" required placeholder="Enter phone number">
+        </div>
+
+        <div class="field">
+          <label for="email">Email address *</label>
+          <input id="email" type="email" required placeholder="name@example.com">
+        </div>
+
+        <div class="field full">
+          <label>
+            <input type="checkbox" required style="width:auto">
+            I am the parent/guardian and agree to be contacted about this enquiry.
+          </label>
+        </div>
+
+        <div class="field full">
+          <button class="btn btn-primary" type="submit">
+            Send Admission Enquiry
+          </button>
+
+          <p class="form-note">
+            Demo form: Connect a secure school system to receive actual applications.
+          </p>
+
+          <div class="notice" id="admissionNotice"></div>
+        </div>
+
+      </div>
+    </form>
+
+  </div>
+</div>
+</section>
+
+<!-- STUDENT ZONE -->
+
+<section id="student-zone">
+<div class="container">
+
+  <div class="section-head">
+    <span class="eyebrow">Play, practise and learn</span>
+    <h2>Welcome to the Student Zone!</h2>
+    <p>Choose a learning corner and enjoy interactive activities.</p>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-panel="little">
+      🌈 Little Learners · Ages 3–8
+    </button>
+
+    <button class="tab" data-panel="smart">
+      🚀 Smart Students · Ages 9–16
+    </button>
+  </div>
+
+  <!-- LITTLE LEARNERS -->
+
+  <div class="game-panel" id="littlePanel">
+
+    <h3>🎨 Little Learners: Count the stars</h3>
+
+    <p>How many stars can you see?</p>
+
+    <div style="font-size:2.3rem;letter-spacing:8px" id="stars">
+      ⭐⭐⭐⭐
+    </div>
+
+    <div class="game-options">
+      <button data-answer="3">3</button>
+      <button data-answer="4">4</button>
+      <button data-answer="5">5</button>
+    </div>
+
+    <div class="feedback" id="littleFeedback"></div>
+
+    <button class="btn btn-outline" id="newStars">New Game</button>
+
+  </div>
+
+  <!-- SMART STUDENTS -->
+
+  <div class="game-panel hidden" id="smartPanel">
+
+    <h3>🧠 Smart Students: Quick Quiz</h3>
+
+    <p id="quizQuestion">
+      Which planet is known as the Red Planet?
+    </p>
+
+    <div class="game-options" id="quizOptions">
+      <button data-quiz="Earth">Earth</button>
+      <button data-quiz="Mars">Mars</button>
+      <button data-quiz="Venus">Venus</button>
+    </div>
+
+    <div class="feedback" id="quizFeedback"></div>
+
+    <button class="btn btn-outline" id="nextQuiz">Next Question</button>
+
+    <p class="small">
+      Study notes can be added here by subject and class.
+    </p>
+
+  </div>
+
+</div>
+</section>
+
+<!-- EVENTS AND GALLERY -->
+
+<section class="soft" id="events">
+<div class="container">
+
+  <div class="section-head">
+    <span class="eyebrow">School life is full of joy</span>
+    <h2>Events & Memories</h2>
+    <p>See what's happening and look back at special school moments.</p>
+  </div>
+
+  <div class="split" style="align-items:start">
+
+    <!-- EVENTS CALENDAR -->
+
+    <div>
+      <h3 style="color:var(--green-dark)">📅 Sample Events Calendar</h3>
+
+      <div class="calendar-list">
+
+        <div class="event-row">
+          <div class="datebox">
+            <strong>05</strong>
+            <small>JUN</small>
+          </div>
+          <div>
+            <b>Environment Day</b>
+            <p>Planting, posters and green activities</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="datebox">
+            <strong>15</strong>
+            <small>AUG</small>
+          </div>
+          <div>
+            <b>Independence Day</b>
+            <p>Flag hoisting and cultural programme</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="datebox">
+            <strong>14</strong>
+            <small>NOV</small>
+          </div>
+          <div>
+            <b>Children's Day</b>
+            <p>A day of games, smiles and fun</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="datebox">
+            <strong>20</strong>
+            <small>DEC</small>
+          </div>
+          <div>
+            <b>Annual Day</b>
+            <p>Student performances and celebrations</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="small">
+        Replace sample dates with the school's approved calendar.
+      </p>
+    </div>
+
+    <!-- PHOTO GALLERY -->
+
+    <div>
+      <h3 style="color:var(--green-dark)">📸 Gallery Preview</h3>
+
+      <div class="gallery">
+        <div class="gallery-item">📚</div>
+        <div class="gallery-item">⚽</div>
+        <div class="gallery-item">🎨</div>
+        <div class="gallery-item">🎵</div>
+        <div class="gallery-item">🔬</div>
+        <div class="gallery-item">🎉</div>
+        <div class="gallery-item">🌱</div>
+        <div class="gallery-item">🏆</div>
+      </div>
+
+      <p class="small">
+        Replace these icons with school-approved photographs.
+        Obtain parental permission before publishing student photos.
+      </p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- PARENT PORTAL -->
+
+<section id="parent-portal">
+<div class="container">
+
+  <div class="section-head">
+    <span class="eyebrow">Home and school together</span>
+    <h2>Parent Portal</h2>
+    <p>
+      Parents can use the portal to view school updates.
+      This is a sample demonstration.
+    </p>
+  </div>
+
+  <div class="portal-demo">
+
+    <div class="form-grid">
+
+      <div class="field">
+        <label for="parentUser">Parent ID (demo)</label>
+        <input id="parentUser" placeholder="Try: parent123">
+      </div>
+
+      <div class="field">
+        <label for="parentPass">Password (demo)</label>
+        <input id="parentPass" type="password" placeholder="Try: demo123">
+      </div>
+
+      <div class="field full">
+        <button class="btn btn-primary" id="loginBtn" type="button">
+          View Demo Portal
+        </button>
+
+        <div class="notice" id="loginNotice"></div>
+      </div>
+
+    </div>
+
+    <div id="portalContent" class="hidden">
+
+      <h3>Welcome, Parent!</h3>
+
+      <p class="small">
+        Sample student dashboard. Replace with secure school records.
+      </p>
+
+      <div class="portal-stats">
+
+        <div class="stat">
+          <strong>92%</strong>
+          <small>Attendance</small>
+        </div>
+
+        <div class="stat">
+          <strong>Paid</strong>
+          <small>Fees Status</small>
+        </div>
+
+        <div class="stat">
+          <strong>A</strong>
+          <small>Sample Result</small>
+        </div>
+
+        <div class="stat">
+          <strong>3</strong>
+          <small>New Notices</small>
+        </div>
+
+      </div>
+
+      <div class="card">
+        <h3>Latest Notices</h3>
+
+        <ul>
+          <li>Parent-teacher meeting — sample notice.</li>
+          <li>Bring your art materials on Friday — sample notice.</li>
+          <li>School event calendar updated — sample notice.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="form-note">
+      Demo login only. A secure backend and individual parent accounts
+      are required for real student information.
+    </p>
+
+  </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="soft" id="contact">
+<div class="container">
+
+  <div class="section-head">
+    <span class="eyebrow">We are happy to help</span>
+    <h2>Contact Daffodils</h2>
+    <p>Have a question about admissions or school life? Reach out to us.</p>
+  </div>
+
+  <div class="contact-grid">
+
+    <div class="contact-card">
+
+      <h3>🏫 School Information</h3>
+
+      <p>
+        <b>Address:</b><br>
+        Hanjay Colony, Station Road, Kudachi
+      </p>
+
+      <p>
+        <b>Phone:</b><br>
+        <a href="tel:6364360590">6364360590</a>
+      </p>
+
+      <p>
+        <b>Email:</b><br>
+        <a href="mailto:daffofilsinternationalschool@gmail.edu.in">
+          daffofilsinternationalschool@gmail.edu.in
+        </a>
+      </p>
+
+      <a class="btn btn-primary" href="tel:6364360590">
+        Call the School
+      </a>
+
+    </div>
+
+    <!-- CONTACT FORM -->
+
+    <div class="card">
+
+      <h3>✉️ Send a Quick Enquiry</h3>
+
+      <form id="contactForm">
+
+        <div class="field">
+          <label for="contactName">Your Name</label>
+          <input id="contactName" required placeholder="Your name">
+        </div>
+
+        <div class="field" style="margin-top:12px">
+          <label for="contactEmail">Email</label>
+          <input id="contactEmail" type="email" required placeholder="Your email">
+        </div>
+
+        <div class="field" style="margin-top:12px">
+          <label for="contactMessage">Your Message</label>
+          <textarea id="contactMessage" rows="3" required placeholder="How can we help?"></textarea>
+        </div>
+
+        <button class="btn btn-primary" style="margin-top:14px" type="submit">
+          Prepare Email
+        </button>
+
+        <div class="notice" id="contactNotice"></div>
+
+      </form>
+
+      <p class="small">
+        This opens your email app with a prepared message.
+      </p>
+
+    </div>
+
+  </div>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+<div class="container">
+
+  <div class="footer-grid">
+
+    <div>
+      <div class="brand" style="color:white">
+        <span class="brandmark">🌼</span>
+        <span>
+          DAFFODILS
+          <small style="color:#d9eadb">INTERNATIONAL SCHOOL · KUDACHI</small>
+        </span>
+      </div>
+
+      <p>
+        Helping children learn, grow and shine —
+        one happy day at a time.
+      </p>
+    </div>
+
+    <div>
+      <b>Explore</b>
+      <a href="#about">About Us</a>
+      <a href="#admissions">Admissions</a>
+      <a href="#student-zone">Student Zone</a>
+      <a href="#events">Events & Gallery</a>
+    </div>
+
+    <div>
+      <b>Get in touch</b>
+      <a href="tel:6364360590">6364360590</a>
+      <a href="mailto:daffofilsinternationalschool@gmail.edu.in">Email the School</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © <span id="year"></span> Daffodils International School, Kudachi.
+  </div>
+
+</div>
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// MOBILE NAVIGATION
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  });
+});
+
+
+// ADMISSION FORM DEMO
+
+document.getElementById('admissionForm').addEventListener('submit', e => {
+
+  e.preventDefault();
+
+  const form = e.currentTarget;
+
+  if (!form.reportValidity()) return;
+
+  const name = document.getElementById('childName').value.trim();
+
+  const notice = document.getElementById('admissionNotice');
+
+  notice.textContent =
+    `Thank you! The admission enquiry for ${name} is ready. Connect this form to a secure school system to receive submissions.`;
+
+  notice.style.display = 'block';
+
+  form.reset();
+
+});
+
+
+// STUDENT ZONE TABS
+
+document.querySelectorAll('.tab').forEach(tab => {
+
+  tab.addEventListener('click', () => {
+
+    document.querySelectorAll('.tab').forEach(t => {
+      t.classList.remove('active');
+    });
+
+    tab.classList.add('active');
+
+    document.getElementById('littlePanel')
+      .classList.toggle('hidden', tab.dataset.panel !== 'little');
+
+    document.getElementById('smartPanel')
+      .classList.toggle('hidden', tab.dataset.panel !== 'smart');
+
+  });
+
+});
+
+
+// LITTLE LEARNERS COUNTING GAME
+
+let starCount = 4;
+
+function setStars() {
+
+  starCount = Math.floor(Math.random() * 5) + 1;
+
+  document.getElementById('stars').textContent =
+    '⭐'.repeat(starCount);
+
+  document.getElementById('littleFeedback').textContent = '';
+
+}
+
+document.querySelectorAll('[data-answer]').forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    const answer = Number(button.dataset.answer);
+
+    document.getElementById('littleFeedback').textContent =
+      answer === starCount
+        ? 'Great job! You got it right! 🎉'
+        : 'Good try! Count the stars once more.';
+
+  });
+
+});
+
+document.getElementById('newStars').addEventListener('click', setStars);
+
+
+// SMART STUDENTS QUIZ
+
+const questions = [
+
+  {
+    q: 'Which planet is known as the Red Planet?',
+    o: ['Earth', 'Mars', 'Venus'],
+    a: 'Mars'
+  },
+
+  {
+    q: 'What is 12 × 3?',
+    o: ['24', '36', '42'],
+    a: '36'
+  },
+
+  {
+    q: 'Which gas do plants take in from the air?',
+    o: ['Oxygen', 'Carbon dioxide', 'Nitrogen'],
+    a: 'Carbon dioxide'
+  },
+
+  {
+    q: 'How many sides does a hexagon have?',
+    o: ['5', '6', '8'],
+    a: '6'
+  }
+
+];
+
+let questionIndex = 0;
+
+function showQuiz() {
+
+  const question = questions[questionIndex];
+
+  document.getElementById('quizQuestion').textContent =
+    question.q;
+
+  const options = document.getElementById('quizOptions');
+
+  options.innerHTML = '';
+
+  question.o.forEach(option => {
+
+    const button = document.createElement('button');
+
+    button.type = 'button';
+    button.textContent = option;
+
+    button.addEventListener('click', () => {
+
+      document.getElementById('quizFeedback').textContent =
+        option === question.a
+          ? 'Correct! Well done! 🌟'
+          : 'Not quite. Try the next one!';
+
+    });
+
+    options.appendChild(button);
+
+  });
+
+  document.getElementById('quizFeedback').textContent = '';
+
+}
+
+document.getElementById('nextQuiz').addEventListener('click', () => {
+
+  questionIndex = (questionIndex + 1) % questions.length;
+
+  showQuiz();
+
+});
+
+
+// PARENT PORTAL DEMO LOGIN
+
+document.getElementById('loginBtn').addEventListener('click', () => {
+
+  const username = document.getElementById('parentUser').value;
+  const password = document.getElementById('parentPass').value;
+
+  const notice = document.getElementById('loginNotice');
+
+  if (username === 'parent123' && password === 'demo123') {
+
+    document.getElementById('portalContent')
+      .classList.remove('hidden');
+
+    notice.textContent =
+      'Demo portal opened. The information shown is sample data.';
+
+  } else {
+
+    document.getElementById('portalContent')
+      .classList.add('hidden');
+
+    notice.textContent =
+      'For this preview, use Parent ID: parent123 and Password: demo123.';
+
+  }
+
+  notice.style.display = 'block';
+
+});
+
+
+// CONTACT FORM
+
+document.getElementById('contactForm').addEventListener('submit', e => {
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById('contactName').value.trim();
+
+  const email =
+    document.getElementById('contactEmail').value.trim();
+
+  const message =
+    document.getElementById('contactMessage').value.trim();
+
+  const subject =
+    encodeURIComponent('Website enquiry from ' + name);
+
+  const body =
+    encodeURIComponent(
+      'Name: ' + name +
+      '\nEmail: ' + email +
+      '\n\nMessage:\n' + message
+    );
+
+  window.location.href =
+    'mailto:daffofilsinternationalschool@gmail.edu.in?subject='
+    + subject + '&body=' + body;
+
+  const notice = document.getElementById('contactNotice');
+
+  notice.textContent =
+    'Your email app should open with your message ready.';
+
+  notice.style.display = 'block';
+
+});
+
+
+// AUTOMATIC COPYRIGHT YEAR
+
+document.getElementById('year').textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
